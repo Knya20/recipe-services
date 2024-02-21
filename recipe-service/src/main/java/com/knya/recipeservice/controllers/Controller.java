@@ -32,4 +32,5 @@ public class Controller {
     public String test(){
         return "Auth Service is Started!";
     }
+
 }
