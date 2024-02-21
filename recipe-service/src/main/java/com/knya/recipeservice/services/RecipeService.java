@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class RecipeService {
@@ -26,19 +29,13 @@ public class RecipeService {
         }
     }
 
-    public ResponseEntity<?> findAll(){
-        try {
-            return ResponseEntity.ok().body(recipeRepository.findAll());
-        } catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body("Ошибка");
-        }
+    public List<Recipe> findAll(){
+        return recipeRepository.findAll();
     }
 
-    public ResponseEntity<?> findById(Long id){
-        try {
-            return ResponseEntity.ok().body(recipeRepository.findById(id));
-        } catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).body("Ошибка");
-        }
+    public String findById(Long id){
+        Optional<Recipe> recipe = recipeRepository.findById(id);
+        return recipe.get().getTitle() + " Описание: " + recipe.get().getDescription();
     }
+
 }

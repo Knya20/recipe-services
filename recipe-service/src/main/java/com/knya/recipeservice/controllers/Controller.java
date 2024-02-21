@@ -1,10 +1,13 @@
 package com.knya.recipeservice.controllers;
 
 import com.knya.recipeservice.dto.RecipeReq;
+import com.knya.recipeservice.models.Recipe;
 import com.knya.recipeservice.services.RecipeService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/recipe")
@@ -19,18 +22,18 @@ public class Controller {
     }
 
     @GetMapping("/findAll")
-    public ResponseEntity<?> findAll(){
+    public List<Recipe> findAll(){
         return recipeService.findAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id){
+    public String findById(@PathVariable Long id){
         return recipeService.findById(id);
     }
 
     @GetMapping("/test")
     public String test(){
-        return "Auth Service is Started!";
+        return "RECIPE";
     }
 
 }

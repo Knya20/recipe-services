@@ -1,6 +1,7 @@
 package com.knya.recipeservice.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Table(name = "recipes")
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
