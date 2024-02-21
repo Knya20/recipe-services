@@ -81,5 +81,3 @@ jobs:
         revision-service-account-id: ${{ secrets.YC_SA_ID }} 
         revision-memory: 4GB
         revision-cpu: 2
-
-  
