@@ -9,10 +9,16 @@ spring:
     name: recipe-service
 
   datasource:
-    url: jdbc:postgresql://51.250.26.59:5432/recipe_db
-    username: secUREusER
-    password: StrongEnoughPassword)
+    url: jdbc:postgresql://thelosst.ru:5432/recipe_db
+    username: admin
+    password: admin
     driver-class-name: org.postgresql.Driver
+
+#  datasource:
+#    url: jdbc:postgresql://51.250.26.59:5432/recipe_db
+#    username: secUREusER
+#    password: StrongEnoughPassword)
+#    driver-class-name: org.postgresql.Driver
 
 management:
   endpoints:
