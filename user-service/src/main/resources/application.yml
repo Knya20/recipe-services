@@ -1,12 +1,12 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
     name: user-service
 
   datasource:
-    url: jdbc:postgresql://thelosst.ru:5432/recipe_db
+    url: jdbc:postgresql://thelosst.ru:5432/recipe_user_db
     username: admin
     password: admin
     driver-class-name: org.postgresql.Driver
